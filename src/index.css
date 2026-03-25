@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Nunito', system-ui, sans-serif;
+
+    /* Petal Light Theme */
+    --background: 30 30% 97%;
+    --foreground: 20 20% 20%;
+    --card: 30 30% 100%;
+    --card-foreground: 20 20% 20%;
+    --popover: 30 30% 100%;
+    --popover-foreground: 20 20% 20%;
+    --primary: 350 60% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 25% 93%;
+    --secondary-foreground: 20 20% 25%;
+    --muted: 30 20% 94%;
+    --muted-foreground: 20 10% 55%;
+    --accent: 350 50% 92%;
+    --accent-foreground: 350 60% 40%;
+    --destructive: 0 55% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 350 60% 65%;
+    --radius: 1rem;
+
+    /* Task status colors */
+    --status-completed: 145 45% 72%;
+    --status-completed-bg: 145 45% 92%;
+    --status-missed: 0 50% 68%;
+    --status-missed-bg: 0 50% 92%;
+    --status-neutral: 30 20% 94%;
+
+    /* Time segments */
+    --segment-morning: 45 80% 75%;
+    --segment-morning-bg: 45 80% 92%;
+    --segment-afternoon: 25 80% 70%;
+    --segment-afternoon-bg: 25 80% 90%;
+    --segment-evening: 270 50% 75%;
+    --segment-evening-bg: 270 50% 92%;
+    --segment-night: 220 60% 72%;
+    --segment-night-bg: 220 60% 92%;
+
+    /* Shadows */
+    --shadow-card: 0 2px 12px -2px hsl(20 20% 20% / 0.06);
+    --shadow-card-hover: 0 4px 16px -2px hsl(20 20% 20% / 0.1);
+  }
+
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 30 15% 85%;
+    --card: 240 8% 14%;
+    --card-foreground: 30 15% 85%;
+    --popover: 240 8% 14%;
+    --popover-foreground: 30 15% 85%;
+    --primary: 350 50% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 6% 18%;
+    --secondary-foreground: 30 15% 80%;
+    --muted: 240 6% 18%;
+    --muted-foreground: 30 10% 55%;
+    --accent: 350 30% 20%;
+    --accent-foreground: 350 50% 75%;
+    --destructive: 0 45% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 350 50% 60%;
+
+    --status-completed: 145 35% 45%;
+    --status-completed-bg: 145 30% 18%;
+    --status-missed: 0 40% 50%;
+    --status-missed-bg: 0 35% 18%;
+    --status-neutral: 240 6% 18%;
+
+    --segment-morning: 45 60% 55%;
+    --segment-morning-bg: 45 40% 18%;
+    --segment-afternoon: 25 60% 50%;
+    --segment-afternoon-bg: 25 40% 18%;
+    --segment-evening: 270 40% 55%;
+    --segment-evening-bg: 270 30% 18%;
+    --segment-night: 220 50% 55%;
+    --segment-night-bg: 220 40% 18%;
+
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 4px 16px -2px hsl(0 0% 0% / 0.4);
+  }
+
+  .bloomcore {
+    --background: 150 25% 22%;
+    --foreground: 60 30% 90%;
+    --card: 150 20% 18%;
+    --card-foreground: 60 30% 90%;
+    --popover: 150 20% 18%;
+    --popover-foreground: 60 30% 90%;
+    --primary: 340 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 18% 26%;
+    --secondary-foreground: 60 25% 85%;
+    --muted: 150 15% 28%;
+    --muted-foreground: 60 15% 60%;
+    --accent: 48 75% 50%;
+    --accent-foreground: 48 80% 15%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 15% 30%;
+    --input: 150 15% 30%;
+    --ring: 340 70% 55%;
+
+    --status-completed: 145 55% 45%;
+    --status-completed-bg: 145 40% 28%;
+    --status-missed: 0 55% 50%;
+    --status-missed-bg: 0 40% 25%;
+    --status-neutral: 150 15% 28%;
+
+    --segment-morning: 48 80% 55%;
+    --segment-morning-bg: 48 50% 25%;
+    --segment-afternoon: 25 70% 55%;
+    --segment-afternoon-bg: 25 45% 25%;
+    --segment-evening: 290 50% 55%;
+    --segment-evening-bg: 290 35% 25%;
+    --segment-night: 220 55% 50%;
+    --segment-night-bg: 220 40% 25%;
+
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.4);
+    --shadow-card-hover: 0 4px 16px -2px hsl(0 0% 0% / 0.5);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .task-card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  .task-card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+/* Add task button theme variants */
+.add-task-btn {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.dark .add-task-btn {
+  background-color: hsl(255 55% 65%);
+  color: hsl(0 0% 100%);
+}
+
+.bloomcore .add-task-btn {
+  background: linear-gradient(135deg, hsl(90 50% 45%), hsl(65 70% 55%));
+  color: hsl(0 0% 10%);
+}
+
+/* Theme background wallpapers */
+.theme-bg-decoration {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Light theme - sunny floral */
+:root .theme-bg-decoration {
+  background-image: url('/src/assets/bg-light.png');
+  opacity: 0.35;
+}
+
+/* Dark theme - moon forest */
+.dark .theme-bg-decoration {
+  background-image: url('/src/assets/bg-dark.png');
+  opacity: 0.4;
+}
+
+/* Bloomcore theme - tropical green */
+.bloomcore .theme-bg-decoration {
+  background-image: url('/src/assets/bg-bloom.png');
+  opacity: 0.25;
+}
